@@ -1,0 +1,154 @@
+How to do PreTest?
+==========================
+Ansible
+Docker
+https://www.devopsschool.com/blog/how-to-do-pre-test-and-post-test-using-devops-school-lms/
+
+Contact@DevOpsSchool.com
+========================
+How to get started?
+=====================================
+Maven
+Nexus
+Ansible
+Jenkins
+Docker
+Selenium 
+Jmeter
+============================================================
+What is DevOps?
+--------------------------------
+    Immediate release 
+    Quality redefine
+    Cost Reduction
+https://www.devopsschool.com/videos/387/complete-cicd-devops-implementation-from-scratch-using-jenkins-by-devopsschool/
+================================
+What are tools which needed in order to Learn and Practice DevOps?
+========================================================
+Prod - Prodx
+Mgr - Mgrx
+=======================
+Architect - Rally - Jira - Sharepoint - Confluence
+Coding - 10 Dev - 10 Module - 
+        Code Integ ->  Git
+        Code Review - 
+                    Peer  - Pulse - Gitlab - gerrit - Github - Code Collabrator
+                    Static - SonarQube
+        Build mgmt  - Maven - MSBuild ---- PART OF THE TRAINING
+        Unit Tesing - junit - nunit
+        Pack mgmt   
+                    App  - JAR
+                    System - EXE - RPM
+        Archive a pack - Nexus  ---- PART OF THE TRAINING
+        Dep 2 
+                Quality env
+                Staging
+                Pre Pred
+                prod
+        Prodx55.5 ---> 100 BOXES
+        --------------------------
+        1 Dep  ---- 9 mins
+        100 Dep ----> 9 mins.
+        ------------------------------
+        100
+                50 L - 50 W
+                50 APACHE - 50 NGINX
+                25 Tom - 25 Jbss - 25 WL - 25 WS
+                25 MYSQL - 25 MSSWL - 25 ORALE - 25 PS
+                100 DIff
+        -----------------
+        HOW??
+        Parrell dep ----> 
+        Programming -> Ansible      ---- PART OF THE TRAINING
+        GUI -> uDeloy - Octopus Deploy
+
+        -------------------
+        100 Dep - 9 mins...
+        --------------------
+        1 SECOND -  DOCKER       ---- PART OF THE TRAINING
+
+        --------------
+        How do we get > 100 BOXES?????
+        1 mins ----> 
+        Cloud 
+                    PUBLIC - AWS
+                    PVT - Vmware
+            
+        AT 
+                feature testing - Selenium      ---- PART OF THE TRAINING 
+                performance - Jemter             ---- PART OF THE TRAINING
+
+
+        Code Coverage - JACOCO 
+        =============================
+        Plan - Code - Review - Build - UT - Pack - Archive - Dep - AT - CC
+        JIRA  - GIT - Sonar - maven - JUNIT - Jar - Nexus - Ansibke - Sel - JACOCO
+        ========================================================================
+                                    Jenkins
+
+Day 1
+==============
+Maven
+Nexus
+
+Day 2
+==============  
+Ansible
+
+Day 3
+==============  
+Docker
+
+Day 4
+==============  
+Jenkins  + Sel + JME
+
+==================================================================
+What is Maven?
+-------------------------------------
+    Build Tool - WRONG.
+    OPen Source Tool
+    Free from APACHE
+    Written in JAVA
+    NEED JRE/JDK
+    ALL PLATFORM
+    Release 3.X
+    Project mgmt tool
+            Folder Strcuture of Code
+            Compile
+            UT
+            Package
+            Install
+            Dependency mgmt
+            mUltiple porjects
+            Config
+            Documents
+            Reports
+            Integration
+
+Why Maven?
+    Automated your project mgmt -- Build mgtm to save time.
+
+Other tool
+Makfile -> Ant - > Maven -> Gradle
+MSBuild - NANT - PS
+
+How to install Maven?
+        Pre - JAVA and JAVA_HOME
+        Copy a Maven.zip file
+        Unzip it
+        Keep it to some dir
+        "SOME_diR"/bin ======> PATH
+
+
+How to verify?
+mvn
+mvn -h
+mvn -v
+
+    
+
+        
+
+
+
