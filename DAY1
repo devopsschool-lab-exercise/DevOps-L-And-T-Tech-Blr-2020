@@ -145,10 +145,124 @@ How to verify?
 mvn
 mvn -h
 mvn -v
-
+https://github.com/devopsschool-lab-exercise/DevOps-L-And-T-Tech-Blr-2020
+http://bit.ly/2RQBQcm
     
+=======================================================
+Basic Workflow?
+==============================
+Humen Life Cycle
+-----------------------------
+BORN -->  KID --> TEEN  --> YOUNG --> MID -> OLD -> DIE
 
+Maven has LIFECYCLE to manage PROJECT
+=======================================
+3 LIFE CYCLE 
+        DEFAULT - 23 PHASES
         
+        PHASES                  GOAL            POWERED by PLUGINS      FORMAT    
+        -----------------------------------------------------------------
+        compile                 compile         XXX                     plugins-name:compile
+        test                    test
+        package                 package
+        install                 install
+        deploy                  deploy
+
+What is PLUGINS?
+------------------------
+plugins a feature.
+Maven
+    Core plugins - Dev by Maven Dev Team.
+    External Plugins  - Dev  by EXTERNAL COmmunity 
 
 
 
+
+        SITE  - 4 PHASES
+        CLEAN - 3 PHASES
+https://maven.apache.org/ref/3.6.3/maven-core/lifecycles.html
+
+
+Q - What is Project name? - prodX
+Q - What is my version - 1.0
+Q - How to manage internal dep? --
+Q - How to create a Skeltan of my project which would be followed by each team member?
+-- archtype
+
+mvn 
+archetype:generate =====    plugins-name:goal
+-DgroupId=com.msoffice.software  
+-DartifactId=msword
+-DarchetypeArtifactId=maven-archetype-quickstart 
+-DarchetypeVersion=1.4
+-DinteractiveMode=false
+
+TYPE - maven-archetype-quickstart
+https://maven.apache.org/archetypes/index.html
+
+GroupId     == com.microsoft.software
+    microsoft
+        word                com.microsoft.software.word
+        excel               com.microsoft.software.excel
+        powerpoint          com.microsoft.software.powerpoint
+        common
+        frontpage
+
+
+ArtifactId == word
+
+Version 
+        RELEASE - 3 3.4 3.4.1
+        SNAPSHOT - 3-SNAPSHOT 3.4-SNAPSHOT 3.4.1-SNAPSHOT
+
+Repository
+
+Dependency mgmt
+    internal
+    external
+
+Maven download a Dependency from
+        LOCAL REPO ---> NOT FUND  ---> CENTRAL REPo ---> coPY TO LR and then use it.
+------------------------------------------
+        ~/.m2
+C:\Users\Rajesh Kumar\.m2\repository
+                               https://repo.maven.apache.org/maven2/
+
+Maven STATEMENT
+-------------------
+
+Step - 1 - Create 1 Project Skelaton
+mvn archetype:generate -DgroupId=com.prodx.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.prodx.software -DartifactId=mail -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Step - 2 - uNderstand Skelaton
+
+Step - 3 - Become a DEV
+
+Step - 4 - Become a QA
+
+Step - 5- 
+mvn compile
+mvn test
+mvn package
+mvn install     COPY a JAR from TARGET to LOCAL REPO
+mvn deploy      COPY a JAR from LOCAL REPO to Private Repo
+
+What is pom.xml?
+======================================
+PROJECT OBJECT MODEL
+XML file
+        PROJECT SPEC
+                GROUP ID
+                ART ID
+                VERSION
+                COMPANY
+                Dependency
+                PLUGINS
+
+
+Packagin
+        Jar
+        war
+        ear
+        pom                
