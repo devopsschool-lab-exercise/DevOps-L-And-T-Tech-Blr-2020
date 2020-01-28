@@ -388,3 +388,22 @@ Step 4 - mvn deploy
 
 SAMPLE REPO = https://github.com/devops-school/helloworld-java-maven
 
+===========================================
+How to download a package using Maven from NEXUS?
+====================================================
+chat    2.0
+
+mail    3.0
+
+COND - CHAT IS DEPENDENT ON MAIL
+============================================
+1. Make sure you update a pom.xml with Dependenct lib which is there in NEXUS but not in LR
+2. Modify settting.xml with GROUP repo type using MIRROR element.
+3. MAKE SURE THAT setting.xml server element ID MUST MATCH with mirror element ID 
+
+<mirror>
+      <id>manayta</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://104.211.181.240:8081/repository/rajesh-group/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
