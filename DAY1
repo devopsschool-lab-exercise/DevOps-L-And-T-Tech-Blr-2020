@@ -266,3 +266,125 @@ Packagin
         war
         ear
         pom                
+====================================================
+What is Nexus?
+    To store package
+            JAR - WAR - EAR 
+            EXE
+            DOCKER IMAGE
+            PYTHON
+            Node Pack
+            RUBY Pack
+            ANY PACK
+    From SonaType
+    Written in JAVA
+    Release         
+            COMMUNITY  - FREE BUT only for MAVEN + GENERIC
+            PROFESSIONAL  - MANY TYPES
+            https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+    Release     
+            3.x
+Why NEXUS?
+            Security 
+            Availability
+            Integrity
+            Durability
+            Easy Maintainance
+            Implementing Process
+            Role Based Access mgmt
+            Integration
+                    LDAP
+                    Maven
+                    JENKKINS
+
+Sketch
+        NEXUS   
+                REPO(S)
+                        Package
+                                Version
+                        UPLOADED - DOWNLOADED
+
+Other tools - Arhciva - Nexus - Artifactory - Nuget
+
+How to install Nexus?
+Pre - https://help.sonatype.com/repomanager3/system-requirements
+
+Install JRE or JDK
+$ su -c "yum install java-1.8.0-openjdk"
+
+Download Nexus for PRO
+https://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
+Extract it and run it.
+
+104.211.183.204
+landt
+landt$123d3kLjsg
+landt$123d3kLjsg
+
+=========================NEXUS================================
+http://104.211.181.240:8081/
+admin
+Password$123
+
+Basic Workflow of SonaType Nexus?
+==========================================
+Step1 - Create a access for Upload & Download suing RBAC.
+- Privillage
+- Role
+- user
+rajesh 
+rajesh123
+
+Step2 - Create a repo
+KIND OF REPO - 
+https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+
+TYPES OF REPO
+        HOSTED - READ and WRITE - LOCAL ONLY FOR SPEED - IN NEXUS SERVER
+                RELEASE - rajesh-hosted  - http://104.211.181.240:8081/repository/rajesh-hosted/
+                SNAPSHOT - rajesh-snapshot  - http://104.211.181.240:8081/repository/rajesh-snapshot/
+        PROXY - READ ONLY - Always Copy of Remote Repo - Cacnhe in NEXUS
+        Remote - https://repo.maven.apache.org/maven2/
+        rajesh-proxy - http://104.211.181.240:8081/repository/rajesh-proxy/
+        GROUP - HOSTED(S) +PROXY(S)
+        rajesh-group  - http://104.211.181.240:8081/repository/rajesh-group/
+
+        Maven Release 
+                RELEASE
+                SNAPSHOT
+
+HOW TO UPLOAD A PACKAGE USING MAVEN TO NEXUS REPO???????????
+Step 1 - Modify POM.Xml with REPO LOCATION SUING <Distributedmgmt> element
+
+<distributionManagement>
+	<repository>
+		<id>manayta</id>
+		<name>Internal Releases</name>
+		<url>http://104.211.181.240:8081/repository/rajesh-hosted/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>manayta</id>
+		<name>Internal Releases</name>
+		<url>http://104.211.181.240:8081/repository/rajesh-snapshot/</url>
+	</snapshotRepository>
+</distributionManagement>
+
+
+Step 2 - Modify setting.xml with ACCESS OF NEXUS with  <Server> element
+
+     <server>
+      <id>manayta</id>
+      <username>rajesh</username>
+      <password>rajesh123</password>
+    </server>
+
+
+Step 3 - MAKE SURE THAT POM.Xml element ID and setting.xml element ID MUST MATCH
+
+Step 4 - mvn deploy
+
+
+SAMPLE REPO = https://github.com/devops-school/helloworld-java-maven
+
