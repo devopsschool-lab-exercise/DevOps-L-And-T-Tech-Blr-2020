@@ -1,0 +1,140 @@
+Ansible
+======================================
+WHY Ansible?
+==================
+What is Ansible?
+        Configuration mgmt tool.
+        From Redhat
+        Written in PYTHON
+        Release
+            Ansible - CMD - Open Source - FREEE - Powered by Community
+            Ansible Towers == CMD + GUI - PAID
+            https://www.devopsschool.com/videos/254/ansible-towertutorial-ansible-tower-tutorial-for-beginners-may-2018
+        Agent less            
+
+Why Ansible?
+        EASY is LEARN | TEST | DEBUG | EXTEND | SHARE
+                Compare to any LANG for Configuration mgmt.
+        Ansible has a capabitlity to manage and deploy parrel.
+        Ansible is Platform indepent
+        Ideopotent -
+
+    
+What is Configuration mgmt????
+    SERVER(S) Configuration mgmt
+
+What is there in SERVER? of which you do manage config of it?????
+RESOURCES
+---------------
+vmware
+    HARDWARE
+        Storage
+        network
+        cpu
+        memory
+SOFTWARE
+    OS
+    file
+    directory
+    ps
+    shell
+    policy
+    services
+    package
+    yum
+    apt
+    nuget
+    application aka package
+PEOPLE
+    user
+    group
+PROCESS aka POLICY
+ 
+OTHER TOOLS
+#1) CFEngine Configuration Tool.
+#2) Puppet Configuration Tool.
+#3) CHEF Configuration Tool.
+#4) Ansible Configuration Tool.
+#5) SALTSTACK Configuration Tool.
+#6) JUJU Configuration Tool.
+#7) RUDDER.
+
+==========================================================
+How it workS!!!!! Architecture of Ansible?
+===========================================
+ACS                                     ARS 
+Ansible COntrol Server                  Ansible Remote Server
+LINUX ONLY                              any
+64 BIT                                  any
+        -----------LINUX --------------> SSH - 22
+        -----------WINSDOWS --------------> WINRM - HTTP - 5985 = HTTPS - 5986
+PYTHON 2.7+   -----------LINUX -------------->     PYTHON 2.4+   
+            ----------WINDOWS --------------> PS 3.0 + DOTNET
+---------------------------------------------------------------------
+
+Roles in Ansible?
+==============================
+Programmer
+Admin/Ops
+
+How to become JAVA Programmer?
+======================================
+JDK -> .JAVA        --> .CLASS --> .JAR ---> .WAR
+        Variables
+        Operators
+        Conditioning
+        Loops
+        Functions
+        Class
+        Interace
+    
+
+How to become Ansible Programmer?
+======================================
+Ansible -> .yaml(PLAYBOOK)        -->  role -->
+        Variables
+        Operators
+        Conditioning
+        Loops
+        Functions
+
+
+=========================================================
+https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+
+$ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update -y 
+$ sudo yum install ansible -y
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+  49  ansible --version
+   50  ansible -h
+   51  history
+
+
+1 104.211.190.185
+2 104.211.190.192
+3 104.211.190.217
+4 104.211.191.253
+5 104.211.184.54
+6 104.211.188.200
+7 104.211.189.15
+8 104.211.189.38
+9 104.211.189.58
+10 104.211.189.236
+11 104.211.186.233
+12 104.211.191.18
+13 104.211.191.23
+14 104.211.185.89
+15 104.211.185.173
+16 104.211.185.179
+17 104.211.184.68
+18 104.211.184.70
+19 104.211.184.72
+20 104.211.184.119
+
+landt
+landt$123d3kLjsg
