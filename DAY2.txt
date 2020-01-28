@@ -71,6 +71,32 @@ LINUX ONLY                              any
 PYTHON 2.7+   -----------LINUX -------------->     PYTHON 2.4+   
             ----------WINDOWS --------------> PS 3.0 + DOTNET
 ---------------------------------------------------------------------
+Components of ACS - ANSIBLE
+------------------------------
+Ansible
+    MODULES
+    What is Module? - ONE TASK
+            CORE  - GIVEN BY ANSIBLE --- 2000
+            https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+            COMMUNITY 
+                    Paramterss...
+Inventory
+    LIST OF IP ADDRESS
+            CAN BE PASSED
+                    COMMADN LINE
+                    FILE - INI FORMAT
+                    DIRECTORY
+                    SCRIPT
+
+Config file
+   /etc/ansible/ansible.cfg
+
+Playbook 
+
+
+
+
+
 
 Roles in Ansible?
 ==============================
@@ -138,3 +164,43 @@ $ systemctl disable firewalld
 
 landt
 landt$123d3kLjsg
+
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+		Do one task in ONE REMOTE MACHINE
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+
+=========================================================
+ADHOC using Ansible.
+
+What your requirement?
+=================================
+Setup a webserver.
+
+Step 1 - Install HTTPD "Ansible module for" Module - yum
+Step 2 - Copy a index.html in /var/www/html/ - copy
+Step 3 - Start a web server - service
+
+
+ansible -h
+
+Optional arguments
+Connection Options:
+Privilege Escalation Options
+
+ansible localhost -m yum -a"pkg=httpd state=present"
+ansible localhost -m file -a"path=index.html state=touch"
+ansible localhost -m copy -a"dest=/var/www/html/ src=index.html"
+ansible localhost -m service -a"name=httpd state=started"
+
+Lab- 
+https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
