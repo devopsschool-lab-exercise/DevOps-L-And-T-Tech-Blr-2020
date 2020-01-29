@@ -165,11 +165,15 @@ $ systemctl disable firewalld
 landt
 landt$123d3kLjsg
 
+MINE
+==============
+104.211.181.240
+
 	using ADHOC command 
-		Do one task in ONE MACHINE(localhost)
-		Do one task in ONE REMOTE MACHINE
-		Do one task in MULTIPLE REMOTE MACHINES using Inventory
-		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory
+		Do one task in ONE MACHINE(localhost)   DONE
+		Do one task in ONE REMOTE MACHINE       DONE        
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory DONE 
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory        DONE 
 	using Playbook(Program)
 		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
 		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
@@ -204,3 +208,97 @@ ansible localhost -m service -a"name=httpd state=started"
 
 Lab- 
 https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
+================================================
+
+localhost
+--------------------
+ansible localhost -m yum -a"pkg=httpd state=present"
+ansible localhost -m file -a"path=index.html state=touch"
+ansible localhost -m copy -a"dest=/var/www/html/ src=index.html"
+ansible localhost -m service -a"name=httpd state=started"
+
+Remote host
+--------------------
+ansible all -i 104.211.185.173, -m yum -a"pkg=httpd state=present" -u landt -k -b -K 
+ansible all -i 104.211.185.173, -m yum -a"pkg=httpd state=present" -u landt -k -b -K
+ansible all -i 104.211.185.173, -m file -a"path=/opt/devopsschool.txt state=touch" -u landt -k -b -K
+
+Inevntory GROUP
+---     
+ALL 
+UNGROUP
+
+
+landt
+landt$123d3kLjsg
+s
+ansible all -i 104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173,104.211.185.173, -m yum -a"pkg=httpd state=present" -u landt -k -b -K
+
+INVENTORY FILE
+====================
+INI FORMAT
+HAS IP ADDRESS or HoST sep by new line.
+Name can be anything.
+
+104.211.189.236
+104.211.186.233
+104.211.191.18
+104.211.191.23
+104.211.185.89
+104.211.185.173
+
+## NEEED TO WORK ---- ansible localhost -m known_hosts -a"name=known_hosts key="
+ansible all -i inventory -m file -a"path=/opt/devopsschool.txt state=touch" -u landt -k -b -K
+
+export ANSIBLE_HOST_KEY_CHECKING=False
+
+
+INVENTORY FILE GROUP
+====================
+INI FORMAT
+HAS IP ADDRESS or HoST sep by new line.
+Name can be anything.
+Has a Group
+
+[web]
+104.211.189.236
+104.211.186.233
+
+[db]
+104.211.191.18
+104.211.191.23
+104.211.185.89
+104.211.185.173
+
+ansible web -i inventory -m file -a"path=/opt/devopsschool.txt state=touch" -u landt -k -b -K
+--------------------------------------
+
+
+INVENTORY FILE BEHAVIOURAL PARAM
+====================
+INI FORMAT
+HAS IP ADDRESS or HoST sep by new line.
+Name can be anything.
+Has a Group
+
+[web]
+104.211.189.236 ansible_user=landt ansible_password=rajesh$123 ansible_become=yes ansible_become_password=rajesh$123
+104.211.186.233 ansible_user=landt ansible_password=landt$123d3kLjsg ansible_become=yes ansible_become_password=landt$123d3kLjsg
+
+[db]
+104.211.191.18
+104.211.191.23
+104.211.185.89
+104.211.185.173
+
+[db:vars]
+ansible_user=landt 
+ansible_password=landt$123d3kLjsg 
+ansible_become=yes 
+ansible_become_password=landt$123d3kLjsg
+
+
+landt
+landt$123d3kLjsg
+
+ansible web,db -i inventory -m file -a"path=/opt/devopsschool.txt state=touch" 
