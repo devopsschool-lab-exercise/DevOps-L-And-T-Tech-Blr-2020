@@ -1,0 +1,122 @@
+What is Docker? 
+- DONE
+
+What is Container 
+    is a USER NS Space
+                With 
+                        NET NS
+                        MNT NS
+                        PROCESS NS
+
+ 194  clear
+  195  ps -eaf | grep docker
+  196  ps
+  197  ps -eaf
+  198  c;ear
+  199  clear
+  200  ps
+  201  clear
+  202  ls
+  203  docker run -itd ubuntu
+  204  docker ps
+  205  docker run -itd ubuntu
+  206  docker ps
+  207  ps -eaf | grep docker
+  208  clear
+  209  ls
+  210  docker ps
+  211  docker inspect 7df6706771d0 | grep -i ip
+  212  docker inspect f75c84647a7e | grep -i ip
+  213  clear
+  214  docker ps
+  215  docker exec 7df6706771d0cdf -kh
+  216  docker exec 7df6706771d0c df -kh
+  217  clear
+  218  docker ps
+  219  docker exec 7df6706771d0 df -kh
+  220  docker exec f75c84647a7e df -kh
+  221  docker exec 7df6706771d0 ls /opt
+  222  docker exec f75c84647a7e ls -opt
+  223  docker exec f75c84647a7e ls /opt
+  224  docker exec f75c84647a7e touch /opt/rajesh.txt
+  225  docker exec f75c84647a7e ls /opt
+  226  docker exec 7df6706771d0 ls /opt
+  227  clear
+  228  docker ps
+  229  docker exec 7df6706771d0 ps -eaf
+  230  docker exec f75c84647a7e ps -eaf
+  231  history
+
+
+Why Containers??
+    -Cost Reduction
+    - Speed of Deployment
+How to install Docker?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+104.211.181.240
+landt
+landt$123d3kLjsg
+
+Architecute of Docker?
+===============================
+Users --> Docker Client ----REST API --> Docker Deamon -----libcontainer---> Kernal --> Namespaces....
+
+  185  docker -v
+  186  sudo systemctl enable docker
+  187  sudo systemctl start docker
+  188  docker info
+  189  which docker
+  190  ps -eaf | grep docker
+  191  docker -v
+  192  docker info
+  193  history
+
+============================
+Other tools - 
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+Workflow  and Lifecycle of Docker Container?
+============================
+Create -> Start -> Stop -> Restart -> pause -> Unpause -> stop -> remove
+
+Create -> Start -> Become
+--------------------------
+            run
+
+Docker Components
+1. Docker Engine
+2. Docker image
+3. Docker Registry and Repos
+3. Docker Container
+
+ 232  clear
+  233  ps -eaf | grep dockerr
+  234  ps -eaf | grep docker
+  235  ps -eaf | grep 26628
+  236  clear
+  237  docker imaes
+  238  docker images
+  239  docker pull jenkins
+  240  clear
+  241  docker imaes
+  242  docker images
+  243  clear
+  244  docker create jenkins
+  245  docker ps
+  246  docker ps -a
+  247  docker start 694c29f333f7
+  248  clear
+  249  docker ps -a
+  250  docker stop 694c29f333f7
+  251  docker ps -a
+  252  docker restart 694c29f333f7
+  253  docker ps -a
+  254  docker pause 694c29f333f7
+  255  docker ps -a
+  256  docker unpause 694c29f333f7
+  257  docker ps -a
+  258  docker stop 694c29f333f7
+  259  docker rm 694c29f333f7
+  260  docker ps -a
+  261  history
