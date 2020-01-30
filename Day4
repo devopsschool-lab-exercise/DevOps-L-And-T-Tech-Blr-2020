@@ -120,3 +120,52 @@ Docker Components
   259  docker rm 694c29f333f7
   260  docker ps -a
   261  history
+
+========================================================
+PID 1 is important.
+
+How to Consume a Container?
+1. How to get inside a container?
+exec way - IT execute an Executables inside a container.
+     with -it and shell - You can go inside.
+attach way
+    it attached to PID 1
+
+
+How to come sfetly out of container
+cntrl + p + q
+
+2. How to access a container from browsers?
+
+docker run -d -p 8080:8080 jenkins
+docker run -d -p 8090:8080 jenkins
+
+261  history
+  262  docke
+  263  docker ps
+  264  docker ps -a
+  265  clear
+  266  docker ps
+  267  docker ps -a
+  268  clear
+  269  docker ps
+  270  docker exec 12a18c3d4bbc ls
+  271  docker exec 12a18c3d4bbc ps
+  272  docker exec 12a18c3d4bbc df
+  273  clear
+  274  ls
+  275  docker exec 12a18c3d4bbc df
+  276  docker exec 12a18c3d4bbc ffff
+  277  clear
+  278  docker ps
+  279  docker exec -it 153c798e36b9 /bin/bash
+  280  docker attach 12a18c3d4bbc
+  281  docker ps -a
+  282  docker run -d jenkins
+  283  docker ps
+  284  docker attach 868791d1713d
+  285  clear
+  286  docker run -d -p 8080:8080 jenkins
+  287  docker run -d -p 8090:8080 jenkins
+  288  docker ps
+  289  history
