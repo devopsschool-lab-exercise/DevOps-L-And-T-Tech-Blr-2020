@@ -169,3 +169,170 @@ docker run -d -p 8090:8080 jenkins
   287  docker run -d -p 8090:8080 jenkins
   288  docker ps
   289  history
+
+===================================
+
+How to create Docker image?          - DONE
+=================================
+Image Anatomy - 
+https://www.devopsschool.com/videos/125/docker-essential-tutorial-october-2019-by-devopsschool-com/
+
+1 Lazy way - Using Existing Container
+2 AUto - using Dockerfile.
+
+FROM ubuntu
+MAINTAINER rjaehs 
+RUN apt-get update
+RUN apt-get install git -y
+
+715  docker images
+  716  docker help
+  717  clear
+  718  docker images
+  719  docker rmi gitea/gitea rabbitmq tomcat node nginx docker sonarqube maven haxqer/jira hello-world jenkins
+  720  clear
+  721  docker images
+  722  docker ps
+  723  docker attach 0dcd0f529bf7
+  724  clear
+  725  docker ps
+  726  git
+  727  docker exec 0dcd0f529bf7 git
+  728  docker ps
+  729  docker images
+  730  docker commit -m"ub-up-git" -a"Rahesk" 0dcd0f529bf7 ub-up-git
+  731  docker images
+  732  clear
+  733  clear
+  734  docker images
+  735  docker tag  ub-up-git scmgalaxy/lnandt
+  736  docker images
+  737  docker login
+  738  docker push scmgalaxy/lnandt
+  739  clear
+  740  vi dockerfile
+  741  docker build -t ffff .
+
+
+BASE - ubuntu
+        git
+
+Docker networking
+--line - 
+TYPES - 
+    bridge
+    host 
+    nulll
+
+
+Docker volume
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+    volume
+    mount
+    tempos
+
+Docker Compose
+Docker-compose.yaml
+        Servicee - web
+            port
+            volume
+            env
+            image
+            build
+            network
+        Servicee - db
+Docker Compose Command
+==============================
+
+
+LINK - http://devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+
+  746  docker network ls
+  747  docker network create dev --type=bridge
+  748  docker network create dev --type=bridge
+  749  docker network create dev -driver=bridge
+  750  docker network create dev --driver=bridge
+  751  clear
+  752  docker network ls
+  753  docker inspect e6a54da55bf7
+  754  docker network ls
+  755  docker inspect c93425574b18
+  756  docker run -itd --net=dev ubuntu
+  757  docker ps
+  758  docker inspect dad285f3a950 | grep -i ip
+  759  docker run -itd --net=host ubuntu
+  760  docker ps
+  761  docker attach f317dd0c2dab
+  762  ifconfig
+  763  clear
+  764  cd /var/lib/docker
+  765  ls
+  766  cd volumes
+  767  ls
+  768  docker volume
+  769  docker volume prune
+  770  clear
+  771  ls
+  772  docker volume create raa
+  773  ls
+  774  cd raa/
+  775  ls
+  776  cd _data/
+  777  ls
+  778  pwd
+  779  docker run -it -v raa:/landt ubuntu
+  780  ls
+  781  clear
+  782  ls
+  783  cd
+  784  ls
+  785  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  786  sudo chmod +x /usr/local/bin/docker-compose
+  787  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  788  docker-compose
+  789  clear
+  790  ls
+  791  vi docker-compose.yaml
+  792  docker-compose
+  793  docker-compose up
+  794  clear
+  795  docker stop $(docker ps -a -q)
+  796  docker rm $(docker ps -a -q)
+  797  clear
+  798  docker ps
+  799  ps -eaf | grep java
+  800  history
+
+
+What is JENKINS?
+-======================
+        CI tools
+
+        COnt --- LOOPS
+        Integ - ALL TOOLS - ALL TEAM -- ALL PROCESS
+
+How to install?
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+http://104.211.181.240:8080/
+rajesh
+rajesh123
+-------------------------
+What is your technology?
+        JAVA
+    
+Where is your source?
+        github
+        https://github.com/devops-school/helloworld-java-maven
+
+What is your builder?
+        maven --> pom.xml
+
+What your want this job to trigger
+        hourly
+
+Whom andhow you want to be notified with?
+        email
+        devs@fsdfsdf.com
